@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#game {
+  width: 800px;
+  height: 500px;
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+.wall {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  background-color: black;
+  animation: wallmove 2s infinite linear;
+  animation-delay: 2s;
+  left: 100%;
+}
+
+.hole {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 150px;
+}
+
+@keyframes wallmove {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -50px;
+  }
+}
+
+.char {
+  width: 30px;
+  height: 30px;
+  background-color: turquoise;
+  position: absolute;
+  left: 200px;
+  border-radius: 50%;
+}
+
+/* score */
+
+.score-container {
+  margin: auto;
+  padding: 2rem 0;
+  text-align: center;
+}
