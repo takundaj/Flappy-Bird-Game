@@ -1,6 +1,8 @@
 const wall = document.querySelector(".wall");
 const hole = document.querySelector(".hole");
 const score = document.querySelector(".score");
+const introWrapper = document.querySelector(".intro-wrapper");
+const introTime = document.querySelector(".intro-timer");
 let random = 100;
 hole.style.top = `${random}px`;
 let counter = 0;
@@ -17,10 +19,27 @@ const char = document.querySelector(".char");
 
 let gravity = 0;
 
-const fall = setInterval(() => {
-  char.style.top = `${gravity}px`;
-  gravity += 2;
+let introTimer = 4;
 
+const introCountDown = setInterval(() => {
+  introTime.textContent = `${introTimer}`;
+  introTimer--;
+
+  if (introTime.textContent === "0") {
+    introWrapper.style.display = "none";
+  }
+}, 950);
+
+const startGame = () => {};
+
+setTimeout(() => {
+  const fall = setInterval(() => {
+    char.style.top = `${gravity}px`;
+    gravity += 2;
+  }, 10);
+}, 5000);
+
+const checkGameOver = setInterval(() => {
   //game over checker
   wallLeft = parseInt(getComputedStyle(wall).getPropertyValue("left"));
   console.log(wallLeft);
