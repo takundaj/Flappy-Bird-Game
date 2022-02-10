@@ -79,4 +79,12 @@ function gameOver() {
   counter = 0;
 }
 
-highscoreElement.textContent = `${localStorage.getItem("lastscore")}`;
+highscoreElement.textContent = `${checkIfHighScoreIsZero()}`;
+
+function checkIfHighScoreIsZero() {
+  if (localStorage.getItem("last score")) {
+    return localStorage.getItem("last score");
+  } else {
+    return 0;
+  }
+}
