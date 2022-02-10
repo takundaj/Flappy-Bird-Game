@@ -82,8 +82,8 @@ function gameOver() {
 highscoreElement.textContent = `${checkIfHighScoreIsZero()}`;
 
 function checkIfHighScoreIsZero() {
-  if (localStorage.getItem("last score")) {
-    return localStorage.getItem("last score");
+  if (localStorage.getItem("lastscore")) {
+    return localStorage.getItem("lastscore");
   } else {
     return 0;
   }
