@@ -3,6 +3,7 @@ const hole = document.querySelector(".hole");
 const score = document.querySelector(".score");
 const introWrapper = document.querySelector(".intro-wrapper");
 const introTime = document.querySelector(".intro-timer");
+const highscoreElement = document.querySelector(".high-score > .score");
 let random = 100;
 hole.style.top = `${random}px`;
 let counter = 0;
@@ -55,6 +56,7 @@ const checkGameOver = setInterval(() => {
       wallLeft > 150 &&
       (charTop < holeTop || charTop > holeBottom))
   ) {
+    wall.style.display = "none";
     gameOver();
   }
 }, 10);
@@ -66,9 +68,15 @@ game.addEventListener("click", (e) => {
 });
 
 function gameOver() {
+  if (counter > localStorage.getItem("lastscore")) {
+    localStorage.setItem("lastscore", counter);
+    highscoreElement.textContent = `${localStorage.getItem("lastscore")}`;
+  }
+
   gravity = 0;
   alert(`Game over! Your score: ${counter}`);
   location.reload();
   counter = 0;
-  score.textContent = `${counter}`;
 }
+
+highscoreElement.textContent = `${localStorage.getItem("lastscore")}`;

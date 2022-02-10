@@ -11,6 +11,9 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
 }
 
 #game {
@@ -61,9 +64,19 @@ body {
 /* score */
 
 .score-container {
-  margin: auto;
-  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4vw;
+}
+
+.current-score,
+.high-score {
   text-align: center;
+  margin: 2vw;
+}
+
+.high-score {
+  color: turquoise;
 }
 
 /* intro */
@@ -81,6 +94,7 @@ body {
   box-shadow: 0 0 5px gray;
   border-radius: 10px;
   padding: 1rem;
+  background-color: white;
 }
 
 .intro h2,
