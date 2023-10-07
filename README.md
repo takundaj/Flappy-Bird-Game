@@ -7,6 +7,8 @@
 
 <img src="img/flappy-bird-banneer.jpeg" alt="MarineGEO circle logo" style="height: 300px; width:70%;"/>
 
+<a href="https://deluxe-selkie-c7cc2d.netlify.app">Flappy Bird Game Link</a>
+
 ## Description
 
 This is remake of the famous flappy bird game that took the world by storm in 2013.
